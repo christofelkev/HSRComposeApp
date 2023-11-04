@@ -21,14 +21,15 @@ class DetailViewModel(
         _uiState.value = UiState.Loading
     }
 
-    fun getHSRCharaById(id:Int) = viewModelScope.launch {
+    fun getHSRCharaById(id: Int) = viewModelScope.launch {
         setLoadingState()
         _uiState.value = UiState.Success(repository.getHSRCharaById(id))
     }
-    suspend fun updateHSRChara(id: Int, newState: Boolean) = viewModelScope.launch {
+
+    fun updateHSRChara(id: Int, newState: Boolean) = viewModelScope.launch {
         setLoadingState()
         repository.updateHSRChara(id, !newState)
-            .collect{ isUpdated->
+            .collect { isUpdated ->
                 if (isUpdated) getHSRCharaById(id)
             }
     }

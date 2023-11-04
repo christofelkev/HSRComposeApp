@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">HSRComposeApp</string>
+    <string name="menu_home">Home</string>
+    <string name="menu_favorite">Favorite</string>
+    <string name="menu_profile">Profile</string>
+
+    <string name="find_character">Find Character</string>
+    <string name="add_favorite">Add to Favorite</string>
+    <string name="delete_favorite">Delete from Favorite</string>
 </resources>

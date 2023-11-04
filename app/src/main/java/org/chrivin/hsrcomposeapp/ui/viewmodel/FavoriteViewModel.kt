@@ -29,7 +29,7 @@ class FavoriteViewModel(
             }
     }
 
-    suspend fun updateHSRChara(id: Int, newState: Boolean) {
+    fun updateHSRChara(id: Int, newState: Boolean) {
         repository.updateHSRChara(id, newState)
         getFavoriteHSRChara()
     }

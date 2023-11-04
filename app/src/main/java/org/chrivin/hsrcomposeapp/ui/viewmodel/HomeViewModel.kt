@@ -35,7 +35,7 @@ class HomeViewModel(
             }
     }
 
-    suspend fun updateHSRChara(id: Int, newState: Boolean) = viewModelScope.launch {
+     fun updateHSRChara(id: Int, newState: Boolean) = viewModelScope.launch {
         repository.updateHSRChara(id, newState)
             .collect { isUpdated ->
                 if (isUpdated) search(_query.value)
