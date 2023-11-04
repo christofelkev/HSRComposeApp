@@ -51,6 +51,8 @@ android {
 
 dependencies {
 
+    androidTestImplementation ("androidx.navigation:navigation-testing:2.5.2") //nav testing
+
     implementation("androidx.navigation:navigation-compose:2.6.0") // Library Navigation Component
 
     implementation ("androidx.compose.material3:material3:1.1.2")

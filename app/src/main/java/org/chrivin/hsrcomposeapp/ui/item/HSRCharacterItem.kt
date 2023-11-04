@@ -53,15 +53,17 @@ fun HSRCharacterItem(
             Box(
                 modifier = Modifier
                     .size(68.dp)
-                    .clip(CircleShape)
-                    .background(Color.Transparent)
-                    .border(3.dp, Color.Black)
             ) {
                 Image(
+
                     painter = painterResource(photo),
                     contentDescription = "photo_character",
-                    modifier = Modifier.fillMaxSize(),
-                    contentScale = ContentScale.Crop
+
+                    contentScale = ContentScale.Crop,
+                    modifier = Modifier
+                        .size(200.dp)
+                        .clip(CircleShape)
+                        .border(3.dp, Color.Black, CircleShape)
                 )
             }
             Column(
@@ -78,26 +80,16 @@ fun HSRCharacterItem(
                     maxLines = 2,
                     style = MaterialTheme.typography.bodyMedium
                 )
-                Row(verticalAlignment = Alignment.CenterVertically) {
-                    Icon(
-                        imageVector = Icons.Default.Favorite,
-                        contentDescription = null,
-                        modifier = Modifier
-                            .padding(end = 4.dp)
-                            .size(16.dp)
-                    )
-                }
             }
         }
         Icon(
             imageVector = if (isFavorite) Icons.Rounded.Favorite else Icons.Outlined.FavoriteBorder,
             contentDescription = null,
-            tint = if (isFavorite) Color.White else Color.Yellow,
+            tint = if (isFavorite) Color.Blue else Color.Black,
             modifier = Modifier
                 .align(Alignment.TopEnd)
                 .padding(4.dp)
                 .size(26.dp)
-                .testTag("item_fav_button")
                 .clickable { onFavoriteIconClicked(id, !isFavorite) }
         )
     }

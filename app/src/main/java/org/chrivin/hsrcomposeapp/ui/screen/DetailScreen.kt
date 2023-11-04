@@ -107,7 +107,6 @@ fun DetailCharacterInfo(
                 contentScale = ContentScale.Crop,
                 modifier = Modifier
                     .fillMaxWidth()
-                    .testTag("scrollImagetoBottom")
             )
             Spacer(modifier = Modifier.height(18.dp))
             Text(
@@ -159,7 +158,6 @@ fun DetailCharacterInfo(
                 .padding(start = 16.dp, top = 8.dp)
                 .align(Alignment.TopStart)
                 .size(40.dp)
-                .testTag("backToHome")
         ) {
             Icon(
                 imageVector = Icons.Default.ArrowBack,
@@ -174,8 +172,6 @@ fun DetailCharacterInfo(
                 .padding(end = 16.dp, top = 8.dp)
                 .align(Alignment.TopEnd)
                 .size(40.dp)
-
-                .testTag("favorite_detail_click")
         ) {
             Icon(
                 imageVector = if (!isFavorite) Icons.Default.FavoriteBorder else Icons.Default.Favorite,

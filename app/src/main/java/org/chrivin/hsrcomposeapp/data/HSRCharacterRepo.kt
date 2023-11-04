@@ -21,14 +21,10 @@ class HSRCharacterRepo {
         return dummyHSRCharacter.first {
             it.id == characterId
         }
-        //return dummyHSRCharacter.firstOrNull { it.id == characterId }
+
     }
 
     fun searchCharacter(query: String) = flow {
-//        val data = dummyHSRCharacter.filter {
-//            it.name.contains(query, ignoreCase = true)
-//        }
-//        emit(data)
         val result = mutableListOf<HSRCharacter>()
         dummyHSRCharacter.filterTo(result) {
             it.name.contains(query, ignoreCase = true)
